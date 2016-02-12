@@ -8,7 +8,7 @@ namespace AddressBook.Objects
     private string _name;
     private string _phone;
     private string _address;
-    private static List<Contact> _contactInstances = new List<Contact> {}
+    private static List<Contact> _contactInstances = new List<Contact> {};
 
     public Contact(string name, string phone, string address)
     {
@@ -53,15 +53,11 @@ namespace AddressBook.Objects
     }
     public static Contact Find(int searchId)
     {
-      return _placeInstances[searchId-1];
+      return _contactInstances[searchId-1];
     }
-
-
-
-    // public void // create SetMethod(parameter newElementVariable)
-    // {
-    //   // set class element = newElementVariable;
+    public static void DeleteAll()
+    {
+      _contactInstances.Clear();
     }
-
   }
 }
