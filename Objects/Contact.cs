@@ -4,21 +4,64 @@ namespace AddressBook.Objects
 {
   public class Contact
   {
-    //object structure goes here, use private elements
-    
-    public //class name (parameters variables used to create the instance of the class)
+    private int _id;
+    private string _name;
+    private string _phone;
+    private string _address;
+    private static List<Contact> _contactInstances = new List<Contact> {}
+
+    public Contact(string name, string phone, string address)
     {
-      //set private class elements to the corresponding parameter variables
+      _name = name;
+      _phone = phone;
+      _address = address;
+      _contactInstances.Add(this);
+      _id = _contactInstances.Count;
 
     }
-    public datatype // create GetMethod() to return the value of each element
+    public string GetName()
     {
-      return // private element _name;
+      return _name;
     }
-    public void // create SetMethod(parameter newElementVariable)
+    public void SetName(string newName)
     {
-      // set class element = newElementVariable;
+      _name = newName;
     }
-    
+    public string GetPhone()
+    {
+      return _phone;
+    }
+    public void SetPhone(string newPhone)
+    {
+      _phone = newPhone;
+    }
+    public string GetAddress()
+    {
+      return _address;
+    }
+    public void SetAddress(string newAddress)
+    {
+      _address = newAddress;
+    }
+    public int GetId()
+    {
+      return _id;
+    }
+    public static List<Contact> GetAll()
+    {
+      return _contactInstances;
+    }
+    public static Contact Find(int searchId)
+    {
+      return _placeInstances[searchId-1];
+    }
+
+
+
+    // public void // create SetMethod(parameter newElementVariable)
+    // {
+    //   // set class element = newElementVariable;
+    }
+
   }
 }
