@@ -1,12 +1,16 @@
 <h1>Contacts</h1>
-
-@for (var i=1; i < @Model.Count; i++)
+<p>______________________</p>
+@for (var i=0; i < @Model.Count; i++)
 {
   <h3>@Model[i].GetName()</h3>
   <p>@Model[i].GetPhone()</p>
   <p>@Model[i].GetAddress()</p>
+  <p>______________________</p>
 }
 
 
+<form action="/contact_deleted" method="post">
+  <button type="submit">Delete All Contacts</button>
+</form>
+
 <a href='/contact_new'>Add a new contact</a>
-<a href='/contact_all'>View all contacts</a>

@@ -23,6 +23,10 @@ namespace AddressBook
         Contact newContact = new Contact(Request.Form["new-name"], Request.Form["new-phone"], Request.Form["new-address"]);
         return View["contact_created.cshtml", newContact];
       };
+      Post["contact_deleted"] = _ => {
+        Contact.DeleteAll();
+        return View["/contact_deleted"];
+      };
 
 
     } //closes HomeModule function
