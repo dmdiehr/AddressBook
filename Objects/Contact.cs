@@ -51,10 +51,6 @@ namespace AddressBook.Objects
     {
       return _contactInstances;
     }
-    public static Contact Find(int searchId)
-    {
-      return _contactInstances[searchId];
-    }
     public static void DeleteAll()
     {
       _contactInstances.Clear();
