@@ -8,14 +8,14 @@ namespace AddressBook.Objects
     private string _name;
     private string _phone;
     private string _address;
-    private static List<Contact> _contactInstances = new List<Contact> {};
+    private static Dictionary<int, Contact> _contactInstances = new Dictionary<int, Contact> {};
 
     public Contact(string name, string phone, string address)
     {
       _name = name;
       _phone = phone;
       _address = address;
-      _contactInstances.Add(this);
+      _contactInstances.Add(_contactInstances.Count, this);
       _id = _contactInstances.Count;
 
     }
@@ -47,13 +47,13 @@ namespace AddressBook.Objects
     {
       return _id;
     }
-    public static List<Contact> GetAll()
+    public static Dictionary<int, Contact> GetAll()
     {
       return _contactInstances;
     }
     public static Contact Find(int searchId)
     {
-      return _contactInstances[searchId-1];
+      return _contactInstances[searchId];
     }
     public static void DeleteAll()
     {

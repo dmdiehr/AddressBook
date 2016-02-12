@@ -16,7 +16,8 @@ namespace AddressBook
         return View["contact_new.cshtml"];
       };
       Get["/contact_all"] = _ => {
-        return View["contact_all.cshtml"];
+        Dictionary<int, Contact> allContacts = Contact.GetAll();
+        return View["contact_all.cshtml", allContacts];
       };
       Post["contact_created"] = _ => {
         Contact newContact = new Contact(Request.Form["new-name"], Request.Form["new-phone"], Request.Form["new-address"]);

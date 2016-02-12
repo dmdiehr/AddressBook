@@ -1,5 +1,12 @@
 <h1>Contacts</h1>
 
+@for (var i=1; i < @Model.Count; i++)
+{
+  <h3>@Model[i].GetName()</h3>
+  <p>@Model[i].GetPhone()</p>
+  <p>@Model[i].GetAddress()</p>
+}
+
 
 <a href='/contact_new'>Add a new contact</a>
 <a href='/contact_all'>View all contacts</a>
