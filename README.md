@@ -6,8 +6,7 @@
 
 ## Description
 
-_This is a simple web app that allows a user to create an address book. The user can create contacts that each contain several pieces of information and save them to the book. Additionally the user can view all of their contacts at once as well as delete all the contents of the book and start over.
- _
+_This is a simple web app that allows a user to create an address book. The user can create contacts that each contain several pieces of information and save them to the book. Additionally the user can view all of their contacts at once as well as delete all the contents of the book and start over._
 
 ## Setup/Installation Requirements
 
